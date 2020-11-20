@@ -5,6 +5,8 @@ class Car:
         self.speed = speed
         self.color = color
         self.name = name
+        if isinstance(self, PoliceCar):
+            self.is_police = True
 
     def go(self):
         print(f'{self.name} is running')
@@ -22,11 +24,10 @@ class Car:
 class TownCar(Car):
     def __init__(self, speed, color, name):
         super().__init__(speed, color, name)
-        print('This is Town Car')
 
     def show_speed(self):
         if self.speed > 60:
-            print(f'{self.name} speed is above 60!')
+            print(f'{self.name} is town car! Max speed is 60')
 
         else:
             print(f'{self.name} is current speed: {self.speed}')
@@ -35,17 +36,15 @@ class TownCar(Car):
 class SportCar(Car):
     def __init__(self, speed, color, name):
         super().__init__(speed, color, name)
-        print('This is Sport Car')
 
 
 class WorkCar(Car):
     def __init__(self, speed, color, name):
         super().__init__(speed, color, name)
-        print('This is Work Car')
 
     def show_speed(self):
         if self.speed > 40:
-            print(f'{self.name} speed is above 60!')
+            print(f'{self.name} is work car! Max speed is 40')
 
         else:
             print(f'{self.name} is current speed: {self.speed}')
@@ -54,7 +53,6 @@ class WorkCar(Car):
 class PoliceCar(Car):
     def __init__(self, speed, color, name):
         super().__init__(speed, color, name)
-        self.is_police = True
         print('This is Police Car')
 
 

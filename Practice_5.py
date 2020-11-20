@@ -17,12 +17,7 @@ class Handle(Stationery):
     def draw(self):
         print(f'Start {self.title} drawing')
 
-a = Stationery('stationey')
-b = Pen('Pen')
-c = Pencil('Pencil')
-d = Handle('Handle')
+a = (Stationery('stationey'), Pen('Pen'), Pencil('Pencil'), Handle('Handle'))
 
-a.draw()
-b.draw()
-c.draw()
-d.draw()
+for el in a:
+    el.draw()
